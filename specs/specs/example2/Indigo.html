@@ -1,0 +1,25 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<link href="../../concordion.css" rel="stylesheet" type="text/css" />
+<body>
+
+    <h1>Indigo!</h1>
+
+    <p>
+    After a user searches for one way flight from Pune to Delhi, search results
+    are displayed!"
+    </p>
+
+    <div class="example">
+
+        <h3>Example</h3>
+
+        <p>
+             When user searches flights from <b concordion:set="#origin">Pune</b>
+             to <b concordion:set="#destination">Delhi</b>
+             then
+             <b concordion:assertEquals="searchResults(#origin)">Flight Origin Airport: Pune</b> should be displayed.
+        </p>
+
+    </div>
+    </body>
+</html>

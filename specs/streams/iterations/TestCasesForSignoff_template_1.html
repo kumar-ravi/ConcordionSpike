@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <script language="javascript" type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<body>
+<form action="#" id="mytestform">
+    <ol id="results">
+        <li>
+            <label for="signoff_1">Some Test case description</label>
+            <input name="signoff_1" type="text" value="Y"/>
+            <strong id="signoff_result_1"></strong>
+        </li>
+        <li>
+            <label for="signoff_2">Some Test case description</label>
+            <input name="signoff_2" type="text" value="Y"/>
+            <strong id="signoff_result_2"></strong>
+        </li>
+    </ol>
+    <input type="submit" value="save"/>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $("#mytestform").on("submit", function (e) {
+            e.preventDefault();
+            for (var i = 1; i <= $("#results input[type=text]").length; i++) {
+                var inputvalue = $("#results input[name=signoff_" + i + "]").val()
+                alert(inputvalue)
+                $("#signoff_result_" + (i)).text(inputvalue)
+            }
+
+            $("#results").find("input[type=text]").remove();
+        });
+    });
+</script>
+
+</body>
+</html>

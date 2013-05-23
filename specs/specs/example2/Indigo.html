@@ -14,10 +14,10 @@
         <h3>Example</h3>
 
         <p>
-             When user searches flights from <b concordion:set="#origin">Pune</b>
+             User searches flights from <b concordion:set="#origin">Pune</b>
              to <b concordion:set="#destination">Delhi</b>
-             then
-             <b concordion:assertEquals="searchResults(#origin)">Flight Origin Airport: Pune</b> should be displayed.
+            then
+             <b concordion:assertEquals="searchResults(#origin, #destination)">Flight Origin Airport: Pune</b> should be displayed.
         </p>
 
     </div>

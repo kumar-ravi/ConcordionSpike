@@ -1,4 +1,6 @@
 *.class
 *.idea/*
 
+.metadata/
+out/
 # Package Files #

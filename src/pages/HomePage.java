@@ -1,26 +1,34 @@
 package pages;
 
-
-import org.openqa.selenium.WebDriver;
-
+import support.PageHelper;
 
 public class HomePage {
-    protected WebDriver webDriver;
 
-    public WebDriver getWebDriver() {
-        return webDriver;
+    private String flightOrigin;
+    private String flightDestination;
+
+    public HomePage(String flightOrigin, String flightDestination) {
+        this.flightOrigin = flightOrigin;
+        this.flightDestination = flightDestination;
     }
 
-    public HomePage(WebDriver webDriver) {
-        this.webDriver = webDriver;
+    public void setItineraryType() {
+        PageHelper.getElementByXPath("//input[@id='oneWayRadio']").click();
+        PageHelper.acceptAlert();
     }
 
-    public void open() {
-        webDriver.get("http://goindigo.in");
+    public void setOriginAirport() {
+        PageHelper.getElementById("from1Select").selectByVisibleText(flightOrigin);
     }
 
-    public void close() {
-        webDriver.close();
-
+    public void setDestinationAirport() {
+        PageHelper.getElementById("to1Select").selectByVisibleText(flightDestination);
     }
+
+    public String findFlights() {
+        PageHelper.getElementByXPath("//div[@class='buttonAlign']/a/img").click();
+        PageHelper.acceptAlert();
+        return PageHelper.getElementByXPath("//div[@id='PageHeader']/h1").getText();
+    }
+
 }

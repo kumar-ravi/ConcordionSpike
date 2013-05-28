@@ -1,34 +1,36 @@
 package pages;
 
-import support.PageHelper;
+import support.TestWebDriver;
 
-public class HomePage {
+public class HomePage extends Page {
 
     private String flightOrigin;
     private String flightDestination;
 
-    public HomePage(String flightOrigin, String flightDestination) {
+    public HomePage(TestWebDriver driver, String flightOrigin, String flightDestination) {
+        super(driver);
         this.flightOrigin = flightOrigin;
         this.flightDestination = flightDestination;
     }
 
     public void setItineraryType() {
-        PageHelper.getElementByXPath("//input[@id='oneWayRadio']").click();
-        PageHelper.acceptAlert();
+        testWebDriver.getElementByXpath("//input[@id='oneWayRadio']").click();
+        testWebDriver.acceptAlert();
     }
 
     public void setOriginAirport() {
-        PageHelper.getElementById("from1Select").selectByVisibleText(flightOrigin);
+        testWebDriver.selectByVisibleText(testWebDriver.getElementById("from1Select"), flightOrigin);
     }
 
     public void setDestinationAirport() {
-        PageHelper.getElementById("to1Select").selectByVisibleText(flightDestination);
+        testWebDriver.selectByVisibleText(testWebDriver.getElementById("to1Select"), flightDestination);
     }
 
     public String findFlights() {
-        PageHelper.getElementByXPath("//div[@class='buttonAlign']/a/img").click();
-        PageHelper.acceptAlert();
-        return PageHelper.getElementByXPath("//div[@id='PageHeader']/h1").getText();
+        testWebDriver.getElementByXpath("//div[@class='buttonAlign']/a/img").click();
+        testWebDriver.acceptAlert();
+        testWebDriver.waitForElementToAppear(testWebDriver.getElementByXpath("//div[@id='PageHeader']/h1"));
+        return testWebDriver.getElementByXpath("//div[@id='PageHeader']/h1").getText();
     }
 
 }

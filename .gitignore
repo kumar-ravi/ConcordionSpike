@@ -1,6 +1,14 @@
+*.log*
+.idea/
+*.iml
+*.ipr
+*.iws
+build/
+out/
+classes
+.gradle
+*.DS_Store
 *.class
 *.idea/*
 
 .metadata/
-out/
-# Package Files #

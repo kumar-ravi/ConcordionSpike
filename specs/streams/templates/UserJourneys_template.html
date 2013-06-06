@@ -1,10 +1,165 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <script language="javascript" type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <style>
+        h1 {
+            color: rgb(0, 0, 255);
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            color: rgb(0, 0, 255);
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+
+        table td {
+            table-layout: auto;
+            overflow-style: auto;
+            word-wrap: break-word;
+        }
+
+        #storyDetailsTable, #testCasesTable {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #storyDetailsTable td, #storyDetailsTable th, #testCasesTable td, #testCasesTable th {
+            font-size: 1em;
+            border: 1px solid #000000;
+            padding: 3px 7px 2px 7px;
+        }
+
+        #storyDetailsTable th, #testCasesTable th {
+            font-size: 1.1em;
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: #A7C942;
+            color: #000000;
+        }
+
+        #storyDetailsTable tr.alt td, #testCasesTable tr.alt td {
+            color: #000000;
+            background-color: #EAF2D3;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 2px solid black;
+        }
+    </style>
+    <h1>Test Cases for Signoff</h1>
 </head>
+
+
 <body>
+
+<div>
+    <table id="storyDetailsTable" border="1" contenteditable="true">
+        <tr>
+    Given I wish to create a new customer and verify that customer is created in GCIS:
+    When I <span c:execute="logonToCRM()">log-in to CRM:</span>
+    And I create a new contact:
+    <table c:execute="createContact(#col1, #col2, #col3, #col4, #col5, #col6, #col7, #col8, #col9)" data-source="Contacts.xls" data-section="CreateIndividualContactTableA">
+        <thead>
+        <tr>
+            <th c:set="#col1">First Name</th>
+            <th c:set="#col2">Last Name</th>
+            <th c:set="#col3">Email</th>
+            <th c:set="#col4">Mobile Phone</th>
+            <th c:set="#col5">Date of Birth</th>
+            <th c:set="#col6">Number Street</th>
+            <th c:set="#col7">City</th>
+            <th c:set="#col8">State</th>
+            <th c:set="#col9">Post Code</th>
+        </tr>
+        </thead>
+    </table>
+    And I <span c:execute="navigateToNewApplicationFromCRMContactScreen()">navigate to the New Application screen via Contact page:</span>
+    And I create a new deposit account:
+             <!--
+    <table c:execute="createDepositAccount(#col1, #col2, #col3, #col4, #col5, #col6, #col7, #col8, #col9, #col10, #col11 #col12, #col13, #col14, #col15, #col16, #col17, #col18, #col19, #col20, #col21, #col22, #col23, #col24, #col25, #col26, #col27, #col28, #col29)" data-source="CreateDepositAccount.xls" data-section="CreateDepositAccountTableA">
+         <thead>
+         <tr>
+             <th c:set="#col1">Application Type</th>
+             <th c:set="#col2">CASA and Deposits</th>
+             <th c:set="#col3">Currency</th>
+             <th c:set="#col4">Product Offers</th>
+             <th c:set="#col5">TandCs</th>
+             <th c:set="#col6">Continue</th>
+             <th c:set="#col7">Industry</th>
+             <th c:set="#col8">Occupation</th>
+             <th c:set="#col9">Maritial Status</th>
+             <th c:set="#col10">Email</th>
+             <th c:set="#col11">Reenter Email</th>
+             <th c:set="#col12">Security Question</th>
+             <th c:set="#col13">Security Answer</th>
+             <th c:set="#col14">Preferred Phone</th>
+             <th c:set="#col15">Since Lived Here</th>
+             <th c:set="#col16">Accommodation Type</th>
+             <th c:set="#col17">Same as Current Address</th>
+             <th c:set="#col18">How Hear About Us</th>
+             <th c:set="#col19">Continue</th>
+             <th c:set="#col20">Select</th>
+             <th c:set="#col21">Amount</th>
+             <th c:set="#col22">Maturity Date Factor</th>
+             <th c:set="#col23">Term Years</th>
+             <th c:set="#col24">Term Months</th>
+             <th c:set="#col25">Term Days</th>
+             <th c:set="#col26">Interest Payout Frequency</th>
+             <th c:set="#col27">Continue</th>
+             <th c:set="#col28">Confirm</th>
+             <th c:set="#col29">Exit</th>
+         </tr>
+         </thead>
+    </table>
+-->
+    Then the GCIS contact ID and deposit account details are displayed on the contract screen:
+
+
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+
+<form action="#" id="testCasesForm">
+    <div>
+        <h2><strong>Test Cases</strong></h2>
+        <table id="testCasesTable" border="1" contenteditable="true">
+            <thead>
+            <th width="5%">Number</th>
+            <th width="75%">Description</th>
+            <th>Signoff Comments (Y/N/...)</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="submit" value="Add Test Case"/>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $("#testCasesForm").on("submit", function (e) {
+            var number = $('#testCasesTable tbody tr').length;
+            $('#testCasesTable tbody').append("<tr><td>"+(number+1)+"</td><td></td><td></td></tr>");
+        });
+    });
+</script>
 
 </body>
 </html>
+

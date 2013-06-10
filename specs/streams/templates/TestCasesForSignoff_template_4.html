@@ -94,13 +94,8 @@
 <br>
 <br>
 
-<br>
-<input type="button" id="updateTestingStatus" value="Update Testing Status"/>
-<br>
-
-
 <div id="testScenarios">
-    <div id="testScenario_1" class="group">
+    <div id="testScenarioTemplate" style="display: none">
         <div>
             <h2><strong>Test Cases for:</strong></h2>
             <table id="testScenarioTable" border="1" contenteditable="true">
@@ -137,6 +132,16 @@
 <input type="button" id="addTestScenario" value="Add Test Scenario"/>
 
 <script type="text/javascript">
+    var createTestScenarioTemplate = function(){
+        var targetElement = document.getElementById('testScenarios')
+        var number = $('#testScenarios .group').length;
+        $('#testScenarios').append("<br><div class= group id=testScenario_"+ (number+1) + "><br>" +
+                document.getElementById("testScenarioTemplate").innerHTML + "<br></div>");
+    };
+    window.onload = function() {
+        createTestScenarioTemplate();
+    };
+
     $(document).on('click', '.buttongroup', function(){
         var path = $(this).closest("div").find("#testCasesTable tbody");
         var number = path.find("tr").length;
@@ -144,10 +149,7 @@
     });
 
     $('#addTestScenario').bind('click', function() {
-        var number = $('#testScenarios .group').length;
-        $('#testScenarios').append("<br><div class= group id=testScenario_"+ (number+1) + "><br>" +
-                document.getElementById("testScenario_" + number).innerHTML + "<br></div>");
-        $('#testScenarios #testScenario_'+(number+1)).find('#testCasesTable tr + tr').remove();
+        createTestScenarioTemplate();
     });
 
 
@@ -155,4 +157,3 @@
 
 </body>
 </html>
-

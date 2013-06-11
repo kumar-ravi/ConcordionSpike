@@ -21,21 +21,29 @@
             word-wrap: break-word;
         }
 
-        #storyDetailsTable, #testCasesTable #testScenarioTable {
+        #storyDetailsTable,
+        #testCaseResults,
+        #testCasesTable
+        #testScenarioTable {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             width: 100%;
             border-collapse: collapse;
         }
 
-        #storyDetailsTable td, #storyDetailsTable th, #testCasesTable td, #testCasesTable th, #testScenarioTable td,
-        #testScenarioTable th {
+        #storyDetailsTable td, #storyDetailsTable th,
+        #testCaseResults th, #testCaseResults td,
+        #testCasesTable td, #testCasesTable th,
+        #testScenarioTable td, #testScenarioTable th {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             font-size: 1em;
             border: 1px solid #000000;
             padding: 3px 7px 2px 7px;
         }
 
-        #storyDetailsTable th, #testCasesTable th, #testScenarioTable th {
+        #storyDetailsTable th,
+        #testCaseResults th,
+        #testCasesTable th,
+        #testScenarioTable th {
             font-size: 1.1em;
             text-align: left;
             padding-top: 5px;
@@ -44,7 +52,10 @@
             color: #000000;
         }
 
-        #storyDetailsTable tr.alt td, #testCasesTable tr.alt td #testScenarioTable tr.alt td {
+        #storyDetailsTable tr.alt td,
+        #testCaseResults tr.alt td,
+        #testCasesTable tr.alt td,
+        #testScenarioTable tr.alt td {
             color: #000000;
             background-color: #EAF2D3;
         }
@@ -59,7 +70,6 @@
     </style>
     <h1>Test Cases for Signoff</h1>
 </head>
-
 <body>
 <div>
     <table id="storyDetailsTable" border="1" contenteditable="true">
@@ -89,18 +99,15 @@
         </tr>
         </tbody>
     </table>
-
 </div>
-<br>
-<br>
 
 <div id="testScenarios">
     <div id="testScenarioTemplate" style="display: none">
         <div>
-            <h2><strong>Test Cases for:</strong></h2>
+            <h2><strong>Test Cases for</strong></h2>
             <table id="testScenarioTable" border="1" contenteditable="true">
                 <thead>
-                <th>Acceptance Criteria</th>
+                <th id="acceptanceCriteriaId">Acceptance Criteria #dummynumber</th>
                 </thead>
                 <tbody>
                 <tr>
@@ -112,7 +119,7 @@
                     <th width="5%">Number</th>
                     <th width="55%">Description</th>
                     <th>Signoff Comments (Y/N/...)</th>
-                    <th width="5%">Status</th>
+                    <th width="5%">Status (P / F)</th>
                     </thead>
                     <tbody>
                     <tr>
@@ -132,27 +139,28 @@
 <input type="button" id="addTestScenario" value="Add Test Scenario"/>
 
 <script type="text/javascript">
-    var createTestScenarioTemplate = function(){
+    var createTestScenarioTemplate = function () {
         var targetElement = document.getElementById('testScenarios')
         var number = $('#testScenarios .group').length;
-        $('#testScenarios').append("<br><div class= group id=testScenario_"+ (number+1) + "><br>" +
-                document.getElementById("testScenarioTemplate").innerHTML + "<br></div>");
+        var scenarioTemplateHtml = document.getElementById("testScenarioTemplate").innerHTML.replace("Acceptance Criteria #dummynumber", "Acceptance Criteria # " + (number+1));
+        $('#testScenarios').append("<br><div class= group id=testScenario_" + (number + 1) + "><br>" +
+                scenarioTemplateHtml + "<br></div>");
     };
-    window.onload = function() {
-        createTestScenarioTemplate();
+    window.onload = function () {
+        if ($('#testScenarios .group').length < 1) {
+            createTestScenarioTemplate();
+        }
     };
 
-    $(document).on('click', '.buttongroup', function(){
+    $(document).on('click', '.buttongroup', function () {
         var path = $(this).closest("div").find("#testCasesTable tbody");
         var number = path.find("tr").length;
         $(path).append("<tr><td>" + (number + 1) + "</td><td></td><td></td><td></td></tr>");
     });
 
-    $('#addTestScenario').bind('click', function() {
+    $('#addTestScenario').bind('click', function () {
         createTestScenarioTemplate();
     });
-
-
 </script>
 
 </body>

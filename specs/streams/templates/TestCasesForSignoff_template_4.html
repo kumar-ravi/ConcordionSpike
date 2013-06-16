@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script language="javascript" type="text/javascript"
-            src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!--<script language="javascript" type="text/javascript"-->
-    <!--src="jquery.min.js"></script>-->
+            <!--src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script language="javascript" type="text/javascript"
+    src="jquery.min.js"></script>
 
     <style>
         h1 {
@@ -74,7 +74,7 @@
 </head>
 <body>
 <div>
-    <table id="storyDetailsTable" border="1" contenteditable="true">
+    <table id="storyDetailsTable" border="1">
         <tr>
             <th>Stream</th>
             <th>Sub-Stream</th>
@@ -82,14 +82,14 @@
             <th>Story Number</th>
         </tr>
         <tr>
-            <td><a href="https://google.com" target="_blank">Stream information / Confluence / Jira</a></td>
-            <td><a href="https://google.com" target="_blank">Sub-Stream information / Confluence / Jira</a></td>
-            <td><a href="https://google.com" target="_blank">Link to Iteration in Jira</a></td>
-            <td><a href="https://google.com" target="_blank">4</a></td>
+            <td><a href="https://google.com" target="_blank" contenteditable="true">Stream information / Confluence / Jira</a></td>
+            <td><a href="https://google.com" target="_blank" contenteditable="true">Sub-Stream information / Confluence / Jira</a></td>
+            <td><a href="https://google.com" target="_blank" contenteditable="true">Link to Iteration in Jira</a></td>
+            <td><a href="https://google.com" target="_blank" contenteditable="true">4</a></td>
         </tr>
     </table>
     <br>
-    <table id="testCaseResults" border="1" contenteditable="true">
+    <table id="testCaseResults" border="1">
         <thead>
         <tr>
             <th>File server location for story's manual test case execution</th>
@@ -109,7 +109,7 @@
     <div id="testScenarioTemplate" style="display: none">
         <div>
             <h2><strong>Test Cases for</strong></h2>
-            <table id="testScenarioTable" border="1" contenteditable="true">
+            <table id="testScenarioTable" border="1">
                 <thead>
                 <th id="acceptanceCriteriaId">Acceptance Criteria #dummynumber</th>
                 </thead>
@@ -117,7 +117,7 @@
                 <tr>
                     <td><div contenteditable="true">Given ... When ... Then</div></td>
                 </tr>
-                <table id="testCasesTable" border="1" contenteditable="true" class="test_cases">
+                <table id="testCasesTable" border="1" class="test_cases">
                     <br>
                     <thead>
                     <th width="5%">Number</th>

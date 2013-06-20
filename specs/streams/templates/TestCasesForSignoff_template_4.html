@@ -4,85 +4,95 @@
     <script language="javascript" type="text/javascript"
             src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <style>
-        h1 {
-        color: rgb(0, 0, 255);
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        }
 
-        h2 {
-        color: rgb(0, 0, 255);
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        }
+        <style>
+            h1 {
+            color: rgb(0, 0, 255);
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            }
 
-        table td {
-        table-layout: auto;
-        overflow-style: auto;
-        word-wrap: break-word;
-        }
+            h2 {
+            color: rgb(0, 0, 255);
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            }
 
-        #storyDetailsTable,
-        #testCaseResults,
-        #testCasesTable
-        #testScenarioTable {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        width: 100%;
-        border-collapse: collapse;
-        }
+            table td {
+            table-layout: auto;
+            overflow-style: auto;
+            word-wrap: break-word;
+            }
 
-        #storyDetailsTable td, #storyDetailsTable th,
-        #testCaseResults th, #testCaseResults td,
-        #testCasesTable td, #testCasesTable th,
-        #testScenarioTable td, #testScenarioTable th {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        font-size: 1em;
-        border: 1px solid #000000;
-        padding: 3px 7px 2px 7px;
-        }
+            #storyDetailsTable,
+            #testCaseResults,
+            #testCasesTable
+            #testScenarioTable {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+            }
 
-        #storyDetailsTable th,
-        #testCaseResults th,
-        #testCasesTable th,
-        #testScenarioTable th {
-        font-size: 1.1em;
-        text-align: left;
-        padding-top: 5px;
-        padding-bottom: 4px;
-        background-color: #A7C942;
-        color: #000000;
-        }
+            #storyDetailsTable td, #storyDetailsTable th,
+            #testCaseResults th, #testCaseResults td,
+            #testCasesTable td, #testCasesTable th,
+            #testScenarioTable td, #testScenarioTable th {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            border: 1px solid #000000;
+            padding: 3px 7px 2px 7px;
+            }
 
-        #storyDetailsTable tr.alt td,
-        #testCaseResults tr.alt td,
-        #testCasesTable tr.alt td,
-        #testScenarioTable tr.alt td {
-        color: #000000;
-        background-color: #EAF2D3;
-        }
+            #storyD etailsTable th,
+            #testCaseResults th,
+            #testCasesTable th,
+            #testScenarioTable th {
+            font-size: 1.1em;
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: #A7C942;
+            color: #000000;
+            }
 
-        table {
-        border-collapse: collapse;
-        }
+            #storyDetailsTable tr.alt td,
+            #testCaseResults tr.alt td,
+            #testCasesTable tr.alt td,
+            #testScenarioTable tr.alt td {
+            color: #000000;
+            background-color: #EAF2D3;
+            }
 
-        table, td, th {
-        border: 2px solid black;
-        }
-    </style>
-    <h1>Test Cases for Signoff</h1>
+            table {
+            border-collapse: collapse;
+            }
+
+            table, td, th {
+            border: 2px solid black;
+            }
+        </style>
+        <h1>Test Cases for Signoff</h1>
 </head>
 <body>
 <div>
     <table id="storyDetailsTable" border="1">
         <tr>
-            <th>Stream</th>
-            <th>Sub-Stream</th>
+            <th>Stream/Sub-Stream</th>
             <th>Iteration</th>
             <th>Story Number</th>
         </tr>
         <tr>
-            <td><a href="https://google.com" target="_blank" contenteditable="true">Stream information / Confluence / Jira</a></td>
-            <td><a href="https://google.com" target="_blank" contenteditable="true">Sub-Stream information / Confluence / Jira</a></td>
-            <td><a href="https://google.com" target="_blank" contenteditable="true">Link to Iteration in Jira</a></td>
-            <td><a href="https://google.com" target="_blank" contenteditable="true">4</a></td>
+            <td><select id="comboStream" class="combo" data-index="0" onchange="setFileServerLocation(this.form);">
+                <option id="comboStream_00" selected="selected" value="opt0">Select Stream...</option>
+                <option id="comboStream_01" val="Opt1" >PAF</option>
+                <option id="comboStream_02" val="Opt2" >Customer</option>
+                <option id="comboStream_03" val="Opt3" >Lending</option>
+            </select></td>
+            <td><select id="comboIteration class="combo" data-index="0">
+                <option id="comboIteration_00" selected="selected" value="opt0">Select Iteration...</option>
+                <option id="comboIteration_01" val="Opt1" >N0</option>
+                <option id="comboIteration_02" val="Opt2" >N1</option>
+                <option id="comboIteration_03" val="Opt3" >N2</option>
+                </select></td>
+            <td><div target="_blank" contenteditable="true">15944</div></td>
         </tr>
     </table>
     <br>
@@ -95,7 +105,7 @@
         <tbody>
         <tr>
             <td>
-                <div contenteditable="true">...</div>
+                <div type="text" id="fileServerLocation" name="fileLocation">//Suncorp/Banking/BPP/</div>
             </td>
         </tr>
         </tbody>
@@ -139,30 +149,13 @@
 </div>
 <input type="button" id="addTestScenario" value="Add Test Scenario"/>
 
-<script type="text/javascript">
-    var createTestScenarioTemplate = function () {
-    var targetElement = document.getElementById('testScenarios')
-    var number = $('#testScenarios .group').length;
-    var scenarioTemplateHtml = document.getElementById("testScenarioTemplate").innerHTML.replace("Acceptance Criteria #dummynumber", "Acceptance Criteria # " + (number+1));
-    $('#testScenarios').append("<br><div class= group id=testScenario_" + (number + 1) + "><br>" +
-    scenarioTemplateHtml + "<br></div>");
-    };
-    document.ready = function () {
-    if ($('#testScenarios .group').length < 1) {
-    createTestScenarioTemplate();
-    }
-    };
+<script type="text/javascript" src="scriptsTemplate.js"></script>
 
-    $(document).on('click', '.buttongroup', function () {
-    var path = $(this).closest("div").find("#testCasesTable tbody");
-    var number = path.find("tr").length;
-    $(path).append("<tr><td>" + (number + 1) + "</td><td><div contenteditable=\'true\'>...</div></td><td><div contenteditable=\'true\'>...</div></td><td><div contenteditable=\'true\'>...</div></td></tr>");
-    });
+<input type="button" id="saveThisFile" value="Save This File"/>
 
-    $('#addTestScenario').bind('click', function () {
-    createTestScenarioTemplate();
-    });
-</script>
+
+
+
 
 </body>
 </html>

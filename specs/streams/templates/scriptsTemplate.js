@@ -1,3 +1,4 @@
+    var fileServerLocationTemplate = "//Suncorp/Banking/BPP/";
     var createTestScenarioTemplate = function () {
     var targetElement = document.getElementById('testScenarios')
     var number = $('#testScenarios .group').length;
@@ -9,6 +10,7 @@
     if ($('#testScenarios .group').length < 1) {
     createTestScenarioTemplate();
     }
+    document.getElementById("fileServerLocation").textContent = fileServerLocationTemplate;
     };
 
     $(document).on('click', '.buttongroup', function () {
@@ -22,6 +24,12 @@
     });
 
     function setFileServerLocation() {
+        var streamToURLMapping = {
+          PAF : "PAF",
+          Customer : "Customer",
+          Lending: "Lending"
+        };
         var test = document.getElementById('comboStream').value;
-        document.getElementById("fileServerLocation").innerHTML += test;
+        var fileServerLocation = streamToURLMapping[test];
+        document.getElementById("fileServerLocation").textContent = fileServerLocationTemplate + fileServerLocation;
     }

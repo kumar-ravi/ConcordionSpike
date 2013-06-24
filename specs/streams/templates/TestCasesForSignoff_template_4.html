@@ -41,7 +41,7 @@
             padding: 3px 7px 2px 7px;
             }
 
-            #storyD etailsTable th,
+            #storyDetailsTable th,
             #testCaseResults th,
             #testCasesTable th,
             #testScenarioTable th {
@@ -80,13 +80,13 @@
             <th>Story Number</th>
         </tr>
         <tr>
-            <td><select id="comboStream" class="combo" data-index="0" onchange="setFileServerLocation(this.form);">
+            <td><select id="comboStream" data-index="0" onchange="setFileServerLocation(this.form);">
                 <option id="comboStream_00" selected="selected" value="opt0">Select Stream...</option>
                 <option id="comboStream_01" val="Opt1" >PAF</option>
                 <option id="comboStream_02" val="Opt2" >Customer</option>
                 <option id="comboStream_03" val="Opt3" >Lending</option>
             </select></td>
-            <td><select id="comboIteration class="combo" data-index="0">
+            <td><select id="comboIteration" data-index="0">
                 <option id="comboIteration_00" selected="selected" value="opt0">Select Iteration...</option>
                 <option id="comboIteration_01" val="Opt1" >N0</option>
                 <option id="comboIteration_02" val="Opt2" >N1</option>
@@ -105,7 +105,7 @@
         <tbody>
         <tr>
             <td>
-                <div type="text" id="fileServerLocation" name="fileLocation">//Suncorp/Banking/BPP/</div>
+                <div type="text" id="fileServerLocation" name="fileLocation"/>
             </td>
         </tr>
         </tbody>

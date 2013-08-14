@@ -38,61 +38,61 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
 
     }
 
-    #storyDetailsTable {
+    #testDetailsTable {
 
     WIDTH: 100%; BORDER-COLLAPSE: collapse; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
 
     }
 
-    #stroyDescription {
+    #testCaseDescription {
 
     WIDTH: 100%; BORDER-COLLAPSE: collapse; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
 
     }
 
-    #testCaseResults {
+    #testInformation {
 
     WIDTH: 100%; BORDER-COLLAPSE: collapse; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
 
     }
 
-    #testCasesTable #testScenarioTable {
+    #testScenarioTable {
 
-    WIDTH: 100%; BORDER-COLLAPSE: collapse; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
+    WIDTH: 50%; BORDER-COLLAPSE: collapse; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
 
     }
 
-    #storyDetailsTable TD {
+    #testDetailsTable TD {
 
     BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; FONT-SIZE: 1em; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 3px
 
     }
 
-    #storyDetailsTable TH {
+    #testDetailsTable TH {
 
     BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; FONT-SIZE: 1em; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 3px
 
     }
 
-    #testCaseResults TH {
+    #testInformation TH {
 
     BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; FONT-SIZE: 1em; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 3px
 
     }
 
-    #testCaseResults TD {
+    #testInformation TD {
 
     BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; FONT-SIZE: 1em; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 3px
 
     }
 
-    #stroyDescription TH {
+    #testCaseDescription TH {
 
     BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; FONT-SIZE: 1em; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 3px
 
     }
 
-    #stroyDescription TD {
+    #testCaseDescription TD {
 
     BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; FONT-SIZE: 1em; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 3px
 
@@ -122,19 +122,19 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
 
     }
 
-    #storyDetailsTable TH {
+    #testDetailsTable TH {
 
     TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006f66; COLOR: #ffffff; FONT-SIZE: 1.1em; PADDING-TOP: 5px
 
     }
 
-    #testCaseResults TH {
+    #testInformation TH {
 
     TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006f66; COLOR: #ffffff; FONT-SIZE: 1.1em; PADDING-TOP: 5px
 
     }
 
-    #stroyDescription TH {
+    #testCaseDescription TH {
 
     TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006f66; COLOR: #ffffff; FONT-SIZE: 1.1em; PADDING-TOP: 5px
 
@@ -152,19 +152,19 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
 
     }
 
-    #storyDetailsTable TR.alt TD {
+    #testDetailsTable TR.alt TD {
 
     BACKGROUND-COLOR: #eaf2d3; COLOR: #000000
 
     }
 
-    #testCaseResults TR.alt TD {
+    #testInformation TR.alt TD {
 
     BACKGROUND-COLOR: #eaf2d3; COLOR: #000000
 
     }
 
-    #stroyDescription TR.alt TD {
+    #testCaseDescription TR.alt TD {
 
     BACKGROUND-COLOR: #eaf2d3; COLOR: #000000
 
@@ -216,395 +216,192 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
 
 <BODY>
 
-<FORM name="form">
+    <FORM name="form">
 
-<H1>Test Cases for Sign-Off</H1>
-
-<DIV>
-
-    <TABLE id=storyDetailsTable border=1>
-
-        <TBODY>
-
-        <TR>
-            <TH>Stream</TH>
-            <TH>Sub-Stream</TH>
-            <TH>Iteration</TH>
-            <TH>Story Number</TH>
-            <TH>Author/Owner</TH>
-        </TR>
-
-        <TR>
-            <TD>
-                <SELECT id=comboStream name="comboStream" onchange=setFileServerLocation(this.form); data-index="0">
-
-                <OPTION id=comboStream_00 selected value="0">Select Stream</OPTION>
-
-                <OPTION id=comboStream_01 value="1">PAF</OPTION>
-
-                <OPTION id=comboStream_02 value="2">Customer</OPTION>
-
-                <OPTION id=comboStream_03 value="3">Lending</OPTION>
-            </SELECT>
-            </TD>
-
-            <TD><SELECT id=comboSubStream name="comboSubStream" data-index="0">
-
-                <OPTION id=comboSubStream_01 val="0">------</OPTION>
-            </SELECT>
-            </TD>
-
-            <TD>
-                <SELECT id=comboIteration data-index="0">
-                    <OPTION id=comboIteration_00 selected value=opt0>Select Iteration...</OPTION>
-
-                    <OPTION id=comboIteration_01 val="Opt1">N0</OPTION>
-
-                    <OPTION id=comboIteration_02 val="Opt2">N1</OPTION>
-
-                    <OPTION id=comboIteration_03 val="Opt3">N2</OPTION>
-
-                    <OPTION id=comboIteration_04 val="Opt4">P1</OPTION>
-
-                    <OPTION id=comboIteration_05 val="Opt5">Q1</OPTION>
-
-                    <OPTION id=comboIteration_06 val="Opt6">R1</OPTION>
-
-                    <OPTION id=comboIteration_07 val="Opt7">S1</OPTION>
-
-                    <OPTION id=comboIteration_08 val="Opt8">T1</OPTION>
-
-                    <OPTION id=comboIteration_09 val="Opt9">U1</OPTION>
-
-                    <OPTION id=comboIteration_10 val="Opt10">V1</OPTION>
-
-                    <OPTION id=comboIteration_11 val="Opt11">W1</OPTION>
-
-                    <OPTION id=comboIteration_12 val="Opt12">X1</OPTION>
-
-                    <OPTION id=comboIteration_13 val="Opt13">Y1</OPTION>
-
-                    <OPTION id=comboIteration_14 val="Opt14">Z1</OPTION>
-
-                </SELECT>
-
-            </TD>
-
-            <TD>
-
-                <DIV contentEditable=true target="_blank">BPPCORE-</DIV>
-
-            </TD>
-
-            <TD>
-
-                <DIV contentEditable=true target="_blank">...</DIV>
-
-            </TD>
-
-        </TR>
-
-        </TBODY>
-
-    </TABLE>
-
-    <BR>
-
-    <TABLE id=testCaseResults border=1>
-
-        <THEAD>
-
-        <TR>
-
-            <TH>File server location for manual test cases</TH></TR></THEAD>
-
-        <TBODY>
-
-        <TR>
-
-            <TD>
-
-                <DIV id=fileServerLocation name="fileLocation" type="text">Choose
-
-                    Stream/Sub-Stream</DIV></TD></TR></TBODY></TABLE><BR>
-
-    <TABLE id=stroyDescription border=1>
-
-        <THEAD>
-
-        <TR>
-
-            <TH>Story Description</TH></TR></THEAD>
-
-        <TBODY>
-
-        <TR>
-
-            <TD>
-
-                <DIV id=storyDetails contentEditable=true name="storyDetails"
-
-                     type="text">Story Description...</DIV></TD></TR></TBODY></TABLE></DIV>
-
-<DIV id=testScenarios>
-
-    <DIV style="DISPLAY: none" id=testScenarioTemplate>
+    <H1>Automation Test Case</H1>
 
         <DIV>
 
-            <H2><STRONG>Test Cases for</STRONG></H2>
+            <TABLE id=testDetailsTable border=1>
+                <TBODY>
+                    <TR>
+                        <TH>JIRA #</TH>
+                        <TH>Iteration</TH>
+                        <TH>Author/Owner</TH>
+                    </TR>
 
-            <TABLE id=testScenarioTable border=1>
+                    <TR>
+                        <TD>
+                            <DIV contentEditable=true target="_blank">BPPCORE- </DIV>
+                        </TD>
+                        <TD>
+                            <SELECT id=comboIteration data-index="0">
+                                <OPTION id=comboIteration_00 selected value=opt0>Select Iteration...</OPTION>
+
+                                <OPTION id=comboIteration_01 val="Opt1">N0</OPTION>
+
+                                <OPTION id=comboIteration_02 val="Opt2">N1</OPTION>
+
+                                <OPTION id=comboIteration_03 val="Opt3">N2</OPTION>
+
+                                <OPTION id=comboIteration_04 val="Opt4">P1</OPTION>
+
+                                <OPTION id=comboIteration_05 val="Opt5">Q1</OPTION>
+
+                                <OPTION id=comboIteration_06 val="Opt6">R1</OPTION>
+
+                                <OPTION id=comboIteration_07 val="Opt7">S1</OPTION>
+
+                                <OPTION id=comboIteration_08 val="Opt8">T1</OPTION>
+
+                                <OPTION id=comboIteration_09 val="Opt9">U1</OPTION>
+
+                                <OPTION id=comboIteration_10 val="Opt10">V1</OPTION>
+
+                                <OPTION id=comboIteration_11 val="Opt11">W1</OPTION>
+
+                                <OPTION id=comboIteration_12 val="Opt12">X1</OPTION>
+
+                                <OPTION id=comboIteration_13 val="Opt13">Y1</OPTION>
+
+                                <OPTION id=comboIteration_14 val="Opt14">Z1</OPTION>
+                            </SELECT>
+                        </TD>
+
+                        <TD>
+                            <DIV contentEditable=true target="_blank">...</DIV>
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+
+            <BR>
+
+            <TABLE id=testInformation border=1>
 
                 <THEAD>
-
-                <TR>
-
-                    <TH id=acceptanceCriteriaId>Acceptance Criteria #dummynumber</TH></TR></THEAD>
+                    <TR>
+                        <TH>Stream</TH>
+                        <TH>Sub-Stream</TH>
+                        <TH>Category</TH>
+                        <TH>Sub-Category</TH>
+                    </TR>
+                </THEAD>
 
                 <TBODY>
 
-                <TR>
+                    <TR>
+                        <TD>
+                            <SELECT id=comboStream name="comboStream" onchange=setFileServerLocation(this.form); data-index="0">
 
-                    <TD>
+                                <OPTION id=comboStream_00 selected value="0">Select Stream</OPTION>
 
-                        <DIV contentEditable=true>Given ... When ...
+                                <OPTION id=comboStream_01 value="1">PAF</OPTION>
 
-                            Then</DIV></TD></TR></TBODY></TABLE><BR>
+                                <OPTION id=comboStream_02 value="2">Customer</OPTION>
 
-            <TABLE id=testCasesTable class=test_cases border=1>
+                                <OPTION id=comboStream_03 value="3">Lending</OPTION>
+                            </SELECT>
+                        </TD>
 
+                        <TD>
+                            <SELECT id=comboSubStream name="comboSubStream" data-index="0">
+                                <OPTION id=comboSubStream_01 val="0">------</OPTION>
+                            </SELECT>
+                        </TD>
+
+                        <TD>
+                            <DIV id=categoryField name="categoryField" type="text" contentEditable=true>...</DIV>
+                        </TD>
+
+                        <TD>
+                            <DIV id=subCategoryField name="subCategoryField" type="text" contentEditable=true>...</DIV>
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            <BR>
+
+            <TABLE id=testCaseDescription border=1>
                 <THEAD>
-
-                <TR>
-
-                    <TH width="5%">Number</TH>
-
-                    <TH width="45%">Description</TH>
-
-                    <TH>Signoff Comments (Y/N/...)</TH>
-
-                    <TH width="10%">Status (P / F)</TH></TR></THEAD>
+                    <TR>
+                        <TH>Test Description</TH>
+                    </TR>
+                </THEAD>
 
                 <TBODY>
-
-                <TR>
-
-                    <TD>1</TD>
-
-                    <TD>
-
-                        <DIV contentEditable=true>...</DIV></TD>
-
-                    <TD>
-
-                        <DIV contentEditable=true>...</DIV></TD>
-
-                    <TD>
-
-                        <DIV contentEditable=true>...</DIV></TD></TR></TBODY></TABLE><BR><INPUT class=buttongroup value="Add Test Case" type=button>
-
-        </DIV></DIV><BR>
-
-    <DIV id=testScenario_1 class=group><BR>
+                    <TR>
+                        <TD>
+                            <DIV id=storyDetails contentEditable=true name="storyDetails"type="text">Test Description...</DIV>
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            <BR>
+        </DIV>
 
         <DIV>
-
-            <H2><STRONG>Test Cases for</STRONG></H2>
-
             <TABLE id=testScenarioTable border=1>
-
                 <THEAD>
-
-                <TR>
-
-                    <TH id=acceptanceCriteriaId>Acceptance Criteria # 1</TH></TR></THEAD>
+                    <TR>
+                        <TH>Acceptance Criteria:</TH>
+                    </TR>
+                </THEAD>
 
                 <TBODY>
+                    <TR>
+                        <TD>
+                            <DIV contentEditable=true>Given ... <BR>When ...<BR>Then...</DIV>
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            <BR>
+        </DIV>
 
-                <TR>
 
-                    <TD>
+        <SCRIPT type=text/javascript>
 
-                        <DIV contentEditable=true>Given ... When ...
+            function setFileServerLocation() {
 
-                            Then</DIV></TD></TR></TBODY></TABLE><BR>
+            var streamToURLMapping = {
+            1 : "PAF",
+            2 : "Customer",
+            3: "Lending"
+            };
 
-            <TABLE id=testCasesTable class=test_cases border=1>
+            var test = document.getElementById('comboStream').value;
 
-                <THEAD>
-
-                <TR>
-
-                    <TH width="5%">Number</TH>
-
-                    <TH width="45%">Description</TH>
-
-                    <TH>Signoff Comments (Y/N/...)</TH>
-
-                    <TH width="10%">Status (P / F)</TH></TR></THEAD>
-
-                <TBODY>
-
-                <TR>
-
-                    <TD>1</TD>
-
-                    <TD>
-
-                        <DIV contentEditable=true>...</DIV></TD>
-
-                    <TD>
-
-                        <DIV contentEditable=true>...</DIV></TD>
-
-                    <TD>
-
-                        <DIV contentEditable=true>...</DIV></TD></TR></TBODY></TABLE><BR><INPUT class=buttongroup value="Add Test Case" type=button>
-
-        </DIV><BR></DIV></DIV><INPUT id=addTestScenario value="Add Test Scenario" type=button>
-
-<SCRIPT type=text/javascript>
-
-
-
-    var fileServerDefaultLocation = "//Suncorp/Banking/BPP/";
-
-
-
-    var createTestScenarioTemplate = function () {
-
-
-
-    var targetElement = document.getElementById('testScenarios')
-
-
-
-    var number = $('#testScenarios .group').length;
-
-
-
-    var scenarioTemplateHtml = document.getElementById("testScenarioTemplate").innerHTML.replace("Acceptance Criteria #dummynumber", "Acceptance Criteria # " + (number+1));
-
-
-
-    $('#testScenarios').append("<br><div class= group id=testScenario_" + (number + 1) + "><br>" + scenarioTemplateHtml + "<br></div>");
-
-
-
-    };
-
-
-
-    document.ready = function () {
-
-
-
-    if ($('#testScenarios .group').length < 1) {
-
-
-
-    createTestScenarioTemplate();
-
-
-
-    }
-
-
-
-    <!--document.getElementById("fileServerLocation").textContent = calculatedFileServerLocation;-->
-
-
-
-    };
-
-
-
-
-
-
-
-    $(document).on('click', '.buttongroup', function () {
-
-
-
-    var path = $(this).closest("div").find("#testCasesTable tbody");
-
-
-
-    var number = path.find("tr").length;
-
-
-
-    $(path).append("<tr><td>" + (number + 1) + "</td><td><div contenteditable=\'true\'>...</div></td><td><div contenteditable=\'true\'>...</div></td><td><div contenteditable=\'true\'>...</div></td></tr>");
-
-
-
-    });
-
-
-
-
-
-
-
-    $('#addTestScenario').bind('click', function () {
-
-
-
-    createTestScenarioTemplate();
-
-
-
-    });
-
-
-    function setFileServerLocation() {
-
-    var streamToURLMapping = {
-    1 : "PAF",
-    2 : "Customer",
-    3: "Lending"
-    };
-
-    var test = document.getElementById('comboStream').value;
-
-    if (test == "Select Stream") {
+            if (test == "Select Stream") {
             document.getElementById("fileServerLocation").innerHTML = "Choose Stream-SubStream";
-        }
+            }
 
-    else {
+            else {
 
             var subStream = new Array();
             subStream[0] = new Array("-Select Stream-");
             subStream[1] = new Array("Platform Architecture Framework");
             subStream[2] = new Array("Select Customer Sub-Stream", "Individual"," Business", "Trust");
-            subStream[3] = new Array("Select lending Sub-Stream", "Origination","Servicing","Collection");
+            subStream[3] = new Array("Select Lending Sub-Stream", "Origination","Servicing","Collection");
 
             var comboValue = comboStream.value;
             document.forms["form"].elements["comboSubStream"].options.length=0;
             for (var i=0;i < subStream[comboValue].length;i++){
-                var option = document.createElement("option");
-                option.setAttribute('value',i+1);
-                option.innerHTML = subStream[comboValue][i];
-                document.forms["form"].elements["comboSubStream"].appendChild(option);
+            var option = document.createElement("option");
+            option.setAttribute('value',i+1);
+            option.innerHTML = subStream[comboValue][i];
+            document.forms["form"].elements["comboSubStream"].appendChild(option);
             }
 
-            var fileServerLocationFolderName = streamToURLMapping[test];
-            var calculatedFileServerLocation = fileServerDefaultLocation + fileServerLocationFolderName;
-            document.getElementById("fileServerLocation").innerHTML = calculatedFileServerLocation;
+            }
+
+            }
 
 
 
-    }
+        </SCRIPT>
 
-    }
-
-
-
-</SCRIPT>
-
-</FORM>
+    </FORM>
 
 </BODY>
 

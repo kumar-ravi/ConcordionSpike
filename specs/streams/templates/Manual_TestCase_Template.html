@@ -357,7 +357,14 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
                                 <DIV contentEditable=true>...</DIV>
                             </TD>
                             <TD>
-                                <DIV contentEditable=true>...</DIV>
+                                <SELECT id=comboStatus data-index="0">
+                                    <OPTION id=comboStatus_00 selected value=opt0>Select Status</OPTION>
+                                    <OPTION id=comboStatus_01 val="Opt1">Passed</OPTION>
+                                    <OPTION id=comboStatus_02 val="Opt2">Failed</OPTION>
+                                    <OPTION id=comboStatus_03 val="Opt3">Blocked</OPTION>
+                                    <OPTION id=comboStatus_04 val="Opt4">Withdrawn</OPTION>
+                                    <OPTION id=comboStatus_05 val="Opt5">In Progress</OPTION>
+                                </select>
                             </TD>
                         </TR>
                     </TBODY>
@@ -408,7 +415,14 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
                             <DIV contentEditable=true>...</DIV>
                         </TD>
                         <TD>
-                            <DIV contentEditable=true>...</DIV>
+                            <SELECT id=comboStatus data-index="0">
+                                <OPTION id=comboStatus_00 selected value=opt0>Select Status</OPTION>
+                                <OPTION id=comboStatus_01 val="Opt1">Passed</OPTION>
+                                <OPTION id=comboStatus_02 val="Opt2">Failed</OPTION>
+                                <OPTION id=comboStatus_03 val="Opt3">Blocked</OPTION>
+                                <OPTION id=comboStatus_04 val="Opt4">Withdrawn</OPTION>
+                                <OPTION id=comboStatus_05 val="Opt5">In Progress</OPTION>
+                            </SELECT>
                         </TD>
                     </TR>
                 </TBODY>
@@ -451,7 +465,7 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
     var path = $(this).closest("div").find("#testCasesTable tbody");
     var number = path.find("tr").length;
 
-    $(path).append("<tr><td>" + (number + 1) + "</td><td><div contenteditable=\'true\'>...</div></td><td><div contenteditable=\'true\'>...</div></td><td><div contenteditable=\'true\'>...</div></td></tr>");
+    $(path).append("<tr><td>" + (number + 1) + "</td><td><div contenteditable=\'true\'>...</div></td><td><div contenteditable=\'true\'>...</div></td><td><div><select id=comboStatus><option id=comboStatusOptions_00>Select Status</option><option id=comboStatusOptions_01>Passed</option><option id=comboStatusOptions_02>Failed</option><option id=comboStatusOptions_03>Blocked</option><option id=comboStatusOptions_04>Withdrawn</option><option id=comboStatusOptions_05>In Progress</option></select></div></td></tr>");
     });
 
     $('#addTestScenario').bind('click', function () {
@@ -493,7 +507,7 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
 
     subStream[2] = new Array("Select Customer Sub-Stream", "Individual"," Business", "Trust");
 
-    subStream[3] = new Array("Select lending Sub-Stream", "Origination","Servicing","Collection");
+    subStream[3] = new Array("Select Lending Sub-Stream", "Origination","Servicing","Collection");
 
 
 
